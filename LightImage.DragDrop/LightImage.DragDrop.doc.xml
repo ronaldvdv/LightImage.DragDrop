@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LightImage.DragDrop</name>
+    </assembly>
+    <members>
+        <member name="T:LightImage.DragDrop.AbstractDropHandler`1">
+            <summary>
+            Base class for individual drop handlers.
+            </summary>
+            <typeparam name="TDestination">Type of item in the target control.</typeparam>
+        </member>
+        <member name="M:LightImage.DragDrop.AbstractDropHandler`1.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightImage.DragDrop.AbstractDropHandler`1"/> class.
+            </summary>
+            <param name="acceptNullTarget">Value indicating whether dropping onto an empty space will also be allowed, giving a target=NULL.</param>
+            <param name="allOrNothing">Value indicating whether drop actions will only be accepted when all selected items pass the given predicate.</param>
+        </member>
+        <member name="P:LightImage.DragDrop.AbstractDropHandler`1.AllOrNothing">
+            <summary>
+            Gets a value indicating whether drop actions will only be accepted when all selected items pass the given predicate.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.AbstractDropHandler`1.AcceptNullTarget">
+            <summary>
+            Gets a value indicating whether dropping onto an empty space will also be allowed, giving a target=NULL.
+            </summary>
+        </member>
+        <member name="M:LightImage.DragDrop.AbstractDropHandler`1.Execute(LightImage.DragDrop.IDragDropInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LightImage.DragDrop.AbstractDropHandler`1.Match(LightImage.DragDrop.IDragDropInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LightImage.DragDrop.AbstractDropHandler`1.GetTargetItem(System.Object,`0@)">
+            <summary>
+            Convert an untyped target item to the desired type and check if it would be accepted based on its type and <see cref="P:LightImage.DragDrop.AbstractDropHandler`1.AcceptNullTarget"/>.
+            </summary>
+            <param name="data">The untyped target item.</param>
+            <param name="target">The converted target item.</param>
+            <returns>Value indicating whether the target has the right type or <see cref="P:LightImage.DragDrop.AbstractDropHandler`1.AcceptNullTarget"/> is true.</returns>
+        </member>
+        <member name="T:LightImage.DragDrop.DragDropEffect">
+            <summary>
+            Effect to be used for the drag action (this typically translates to an an icon or cursor).
+            </summary>
+        </member>
+        <member name="F:LightImage.DragDrop.DragDropEffect.None">
+            <summary>
+            Don't allow the action.
+            </summary>
+        </member>
+        <member name="F:LightImage.DragDrop.DragDropEffect.Copy">
+            <summary>
+            Indicate that a copy of the dragged content will be made in the drop target.
+            </summary>
+        </member>
+        <member name="F:LightImage.DragDrop.DragDropEffect.Move">
+            <summary>
+            Indicate that the dragged content will move to the drop target.
+            </summary>
+        </member>
+        <member name="F:LightImage.DragDrop.DragDropEffect.Link">
+            <summary>
+            Indicate that the drop target will be linked to the dragged item.
+            </summary>
+        </member>
+        <member name="T:LightImage.DragDrop.DropFileTargetHandler`1">
+            <summary>
+            Base class for drop handlers that receive files.
+            </summary>
+            <typeparam name="TDestination">Type of items in the target control.</typeparam>
+        </member>
+        <member name="M:LightImage.DragDrop.DropFileTargetHandler`1.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightImage.DragDrop.DropFileTargetHandler`1"/> class.
+            </summary>
+            <param name="acceptNullTarget">Value indicating whether items can be dropped on an empty spot without items.</param>
+            <param name="allOrNothing">Value indicating whether all dragged items must be accepted in order for the drop action to succeed.</param>
+        </member>
+        <member name="M:LightImage.DragDrop.DropFileTargetHandler`1.Execute(LightImage.DragDrop.IDragDropInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LightImage.DragDrop.DropFileTargetHandler`1.Match(LightImage.DragDrop.IDragDropInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LightImage.DragDrop.DropFileTargetHandler`1.AcceptFileSet(System.IO.FileInfo[],`0)">
+            <summary>
+            Check if a given set of files would be accepted for a given target item.
+            </summary>
+            <param name="files">The files being dragged.</param>
+            <param name="target">The hovered item in the target control.</param>
+            <returns>Value indicating whether the files would be accepted when dropped on the taret.</returns>
+        </member>
+        <member name="M:LightImage.DragDrop.DropFileTargetHandler`1.Handle(System.IO.FileInfo[],`0)">
+            <summary>
+            Handle a collection of files being dropped.
+            </summary>
+            <param name="source">Files being dropped on the target control.</param>
+            <param name="target">Item in the target control on which the files are being dropped.</param>
+            <returns>Task representing the asynchronous handling of the drop action.</returns>
+        </member>
+        <member name="M:LightImage.DragDrop.DropFileTargetHandler`1.Match(`0,System.IO.FileInfo)">
+            <summary>
+            Check if a file is accepted when dropped on the target control.
+            </summary>
+            <param name="target">The item in the target control under the mouse cursor.</param>
+            <param name="file">File being dropped.</param>
+            <returns>Value indicating whether the file is accepted.</returns>
+        </member>
+        <member name="T:LightImage.DragDrop.DropHandler`2">
+            <summary>
+            Base class for handling drag-drop for specific types of data and target. Subclasses should provide ways
+            to derive if a specific item+target are accepted and to handle the actual drop response.
+            </summary>
+            <typeparam name="TSource">Type of source items being dragged.</typeparam>
+            <typeparam name="TDestination">Type of items in the target control.</typeparam>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandler`2.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightImage.DragDrop.DropHandler`2"/> class.
+            </summary>
+            <param name="acceptNullTarget">Value indicating whether items can be dropped on an empty spot without items.</param>
+            <param name="allOrNothing">Value indicating whether all dragged items must be accepted in order for the drop action to succeed.</param>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandler`2.Execute(LightImage.DragDrop.IDragDropInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandler`2.Match(LightImage.DragDrop.IDragDropInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandler`2.Accept(`0,`1)">
+            <summary>
+            Check if a specific item is allowed to be dropped onto the target.
+            </summary>
+            <param name="item">One of the items being dragged.</param>
+            <param name="target">The item in the target control under the mouse cursor.</param>
+            <returns>Value indicating the item can be dropped on the target.</returns>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandler`2.Handle(System.Collections.Generic.IEnumerable{`0},`1,LightImage.DragDrop.IDragDropInfo)">
+            <summary>
+            Execute the drop execution for a given target and collection of dragged items.
+            </summary>
+            <param name="items">The items being dragged.</param>
+            <param name="target">The item in the target control under the mouse cursor.</param>
+            <param name="info">Additional information on the drag-drop action.</param>
+            <returns>Task representing the asynchronous handling of the drop action.</returns>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandler`2.OnDrag(`1,System.Collections.Generic.IEnumerable{`0},System.Boolean,LightImage.DragDrop.IDragDropInfo)">
+            <summary>
+            Callback executed when items are dragged above the target control.
+            </summary>
+            <param name="target">The item in the target control under the mouse cursor.</param>
+            <param name="items">The items being dragged.</param>
+            <param name="accept">The aggregated result of the <see cref="M:LightImage.DragDrop.DropHandler`2.Accept(`0,`1)"/> calls for the given target and items.</param>
+            <param name="info">Additional information on the drag-drop action.</param>
+        </member>
+        <member name="T:LightImage.DragDrop.DropTarget">
+            <summary>
+            Drop target view model, consisting of one or more <see cref="T:LightImage.DragDrop.IDropTargetHandler"/> handlers.
+            </summary>
+        </member>
+        <member name="M:LightImage.DragDrop.DropTarget.#ctor(LightImage.DragDrop.IDropTargetHandler[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightImage.DragDrop.DropTarget"/> class.
+            </summary>
+            <param name="handlers">Collection of drop handlers.</param>
+        </member>
+        <member name="P:LightImage.DragDrop.DropTarget.Handlers">
+            <summary>
+            Gets the collection of drop handlers.
+            </summary>
+        </member>
+        <member name="M:LightImage.DragDrop.DropTarget.DragOver(LightImage.DragDrop.IDragDropInfo)">
+            <summary>
+            Handle a drag operation by finding a matching handler and letting it update the <see cref="T:LightImage.DragDrop.IDragDropInfo"/>.
+            </summary>
+            <param name="info">Drag information.</param>
+        </member>
+        <member name="M:LightImage.DragDrop.DropTarget.Drop(LightImage.DragDrop.IDragDropInfo)">
+            <summary>
+            Handle a drop operation by finding a matching handler and letting it handle the dropped items asynchronously.
+            </summary>
+            <param name="dropInfo">Drop information.</param>
+            <returns>Task representing the asynchronous handling of the drop action.</returns>
+        </member>
+        <member name="T:LightImage.DragDrop.IDragDropInfo">
+            <summary>
+            Information on a drag or drop operation.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.Data">
+            <summary>
+            Gets the data being dragged.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.DropPosition">
+            <summary>
+            Gets the mouse coordinates relative to the drop target control.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.Effect">
+            <summary>
+            Gets or sets the effect for visualizing the type of action.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.Files">
+            <summary>
+            Gets the collection of paths for files being dragged, or NULL if not applicable.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.Index">
+            <summary>
+            Gets the index within the target container where dropped items would be positioned.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.IsCtrlPressed">
+            <summary>
+            Gets a value indicating whether the Control key is being pressed during the action.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.SourceItems">
+            <summary>
+            Gets the collection of items in the source control where the dragging started.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.TargetItem">
+            <summary>
+            Gets the item in the target control under the mouse cursor.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.IDragDropInfo.VisualTarget">
+            <summary>
+            Gets the target control.
+            </summary>
+        </member>
+        <member name="T:LightImage.DragDrop.IDropTargetHandler">
+            <summary>
+            Contract for drop handlers.
+            </summary>
+        </member>
+        <member name="M:LightImage.DragDrop.IDropTargetHandler.Execute(LightImage.DragDrop.IDragDropInfo)">
+            <summary>
+            Handle a drop operation asynchronously.
+            </summary>
+            <param name="info">Info regarding the drop action.</param>
+            <returns>Task representing the asynchronous handling of a drop action.</returns>
+        </member>
+        <member name="M:LightImage.DragDrop.IDropTargetHandler.Match(LightImage.DragDrop.IDragDropInfo)">
+            <summary>
+            Test if a drop operation would be accepted.
+            </summary>
+            <param name="info">Info regarding the drop action.</param>
+            <returns>Value indicating whether the operation would be accepted.</returns>
+        </member>
+        <member name="T:LightImage.DragDrop.TestDragDropInfo">
+            <summary>
+            Drag info implementation for testing purposes.
+            </summary>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.Data">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.DropPosition">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.Effect">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.Files">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.Index">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.IsCtrlPressed">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.SourceItems">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.TargetItem">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.TestDragDropInfo.VisualTarget">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

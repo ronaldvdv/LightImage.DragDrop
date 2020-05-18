@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LightImage.DragDrop.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:LightImage.Util.Geometry.ConversionExtensions">
+            <summary>
+            Extension methods for converting between <see cref="N:LightImage.Util.Geometry"/> and <see cref="N:System.Windows"/> geometry.
+            </summary>
+        </member>
+        <member name="M:LightImage.Util.Geometry.ConversionExtensions.AsPoint(LightImage.Util.Geometry.PointD)">
+            <summary>
+            Convert a <see cref="T:LightImage.Util.Geometry.PointD"/> to a <see cref="T:System.Windows.Point"/>.
+            </summary>
+            <param name="pt">The point to be converted.</param>
+            <returns>The converted point.</returns>
+        </member>
+        <member name="M:LightImage.Util.Geometry.ConversionExtensions.AsPointD(System.Windows.Point)">
+            <summary>
+            Convert a <see cref="T:System.Windows.Point"/> to a <see cref="T:LightImage.Util.Geometry.PointD"/>.
+            </summary>
+            <param name="pt">The point to be converted.</param>
+            <returns>The converted point.</returns>
+        </member>
+        <member name="M:LightImage.Util.Geometry.ConversionExtensions.AsRect(LightImage.Util.Geometry.RectD)">
+            <summary>
+            Convert a <see cref="T:LightImage.Util.Geometry.RectD"/> to a <see cref="T:System.Windows.Rect"/>.
+            </summary>
+            <param name="rect">The rectangle to be converted.</param>
+            <returns>The converted rectangle.</returns>
+        </member>
+        <member name="M:LightImage.Util.Geometry.ConversionExtensions.AsRectD(System.Windows.Rect)">
+            <summary>
+            Convert a <see cref="T:System.Windows.Rect"/> to a <see cref="T:LightImage.Util.Geometry.RectD"/>.
+            </summary>
+            <param name="rect">The rectangle to be converted.</param>
+            <returns>The converted rectangle.</returns>
+        </member>
+        <member name="M:LightImage.Util.Geometry.ConversionExtensions.AsSize(LightImage.Util.Geometry.SizeD)">
+            <summary>
+            Convert a <see cref="T:LightImage.Util.Geometry.SizeD"/> to a <see cref="T:System.Windows.Size"/>.
+            </summary>
+            <param name="size">The size to be converted.</param>
+            <returns>The converted size.</returns>
+        </member>
+        <member name="M:LightImage.Util.Geometry.ConversionExtensions.AsSizeD(System.Windows.Size)">
+            <summary>
+            Convert a <see cref="T:System.Windows.Size"/> to a <see cref="T:LightImage.Util.Geometry.SizeD"/>.
+            </summary>
+            <param name="size">The size to be converted.</param>
+            <returns>The converted size.</returns>
+        </member>
+        <member name="T:LightImage.DragDrop.DragDropExtensions">
+            <summary>
+            Extension methods related to controls and drop targets.
+            </summary>
+        </member>
+        <member name="M:LightImage.DragDrop.DragDropExtensions.AsGongHandler(LightImage.DragDrop.DropTarget)">
+            <summary>
+            Convert a <see cref="T:LightImage.DragDrop.DropTarget"/> view model to a <see cref="T:GongSolutions.Wpf.DragDrop.IDropTarget"/> instance.
+            </summary>
+            <param name="target">The target view model to be converted.</param>
+            <returns>An wrapper instance of a <see cref="T:GongSolutions.Wpf.DragDrop.IDropTarget"/> for the given view model.</returns>
+        </member>
+        <member name="M:LightImage.DragDrop.DragDropExtensions.BindDropHandler(System.Windows.Controls.Control,LightImage.DragDrop.DropTarget)">
+            <summary>
+            Bind a drop target to a control.
+            </summary>
+            <param name="control">The control that should get drop target behaviour.</param>
+            <param name="handler">The drop target handler to be used.</param>
+            <returns>A disposable that can be used to unassign the behaviour.</returns>
+        </member>
+        <member name="M:LightImage.DragDrop.DragDropExtensions.ClearDragDrop(System.Windows.Controls.Control)">
+            <summary>
+            Clear dragdrop behaviour from a control.
+            </summary>
+            <param name="control">Control for which the behaviour should be removed.</param>
+        </member>
+        <member name="P:LightImage.DragDrop.DragDropExtensions.DragDropInfo.IsCtrlPressed">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.DragDropExtensions.DragDropInfo.SourceItems">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.DragDropExtensions.DragDropInfo.TargetItem">
+            <inheritdoc/>
+        </member>
+        <member name="P:LightImage.DragDrop.DragDropExtensions.DragDropInfo.VisualTarget">
+            <inheritdoc/>
+        </member>
+        <member name="T:LightImage.DragDrop.DropHandlerConverter">
+            <summary>
+            Value converter for <see cref="T:LightImage.DragDrop.DropTarget"/> view models to <see cref="T:GongSolutions.Wpf.DragDrop.IDropTarget"/> instances.
+            </summary>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandlerConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LightImage.DragDrop.DropHandlerConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:LightImage.DragDrop.IDropPositionTransformer">
+            <summary>
+            Contract for drop target controls that support transforming the drop coordinates to a local coordinate system.
+            </summary>
+        </member>
+        <member name="M:LightImage.DragDrop.IDropPositionTransformer.TransformDropPosition(LightImage.Util.Geometry.PointD)">
+            <summary>
+            Transform the system drop coordinates from <see cref="P:LightImage.DragDrop.IDragDropInfo.DropPosition"/> to local coordinates.
+            </summary>
+            <param name="dropPosition">The original drop coordinates.</param>
+            <returns>The transformed coordinates.</returns>
+        </member>
+    </members>
+</doc>

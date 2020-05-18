@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30105.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightImage.DragDrop", "LightImage.DragDrop\LightImage.DragDrop.csproj", "{97B1A1B8-CCFB-49B8-82B0-7F605CBA1A91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightImage.DragDrop.Wpf", "LightImage.DragDrop.Wpf\LightImage.DragDrop.Wpf.csproj", "{22A1AAC1-3AC6-412C-AE2D-63C092E29B51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97B1A1B8-CCFB-49B8-82B0-7F605CBA1A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B1A1B8-CCFB-49B8-82B0-7F605CBA1A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B1A1B8-CCFB-49B8-82B0-7F605CBA1A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B1A1B8-CCFB-49B8-82B0-7F605CBA1A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A1AAC1-3AC6-412C-AE2D-63C092E29B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A1AAC1-3AC6-412C-AE2D-63C092E29B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A1AAC1-3AC6-412C-AE2D-63C092E29B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A1AAC1-3AC6-412C-AE2D-63C092E29B51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52AB859-72F7-490A-9DA3-3B11E570EFE5}
+	EndGlobalSection
+EndGlobal

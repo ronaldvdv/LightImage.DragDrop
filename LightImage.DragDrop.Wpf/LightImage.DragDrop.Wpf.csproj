@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>LightImage.DragDrop</RootNamespace>
+    <PackageIcon>logo.png</PackageIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <Authors>Ronald van der Velden, Jeroen van der Velden</Authors>
+    <Company>Light Image</Company>
+    <Description>WPF bindings for using LightImage.DragDrop viewmodels with GongSolutions.DragDrop</Description>
+    <Copyright>(c) 2020 Light Image</Copyright>
+    <PackageProjectUrl>https://github.com/ronaldvdv/LightImage.DragDrop</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ronaldvdv/LightImage.DragDrop</RepositoryUrl>
+    <PackageTags>dragdrop,drag,drop,mvvm,viewmodels,gong,gongsolutions,wpf</PackageTags>
+    <Version>0.1-alpha</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>LightImage.DragDrop.Wpf.doc.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="gong-wpf-dragdrop" Version="2.2.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LightImage.DragDrop\LightImage.DragDrop.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageIcon>logo.png</PackageIcon>
+    <Version>0.1.0-alpha</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Ronald van der Velden, Jeroen van der Velden</Authors>
+    <Company>Light Image</Company>
+    <Description>Drag-drop viewmodels for use with GongSolutions.DragDrop</Description>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ronaldvdv/LightImage.DragDrop</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ronaldvdv/LightImage.DragDrop</RepositoryUrl>
+    <PackageTags>dragdrop,drag,drop,mvvm,viewmodels,gong,gongsolutions,wpf</PackageTags>
+    <Copyright>(c) 2020 Light Image</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>LightImage.DragDrop.doc.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LightImage.Util" Version="1.1.0-alpha" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
