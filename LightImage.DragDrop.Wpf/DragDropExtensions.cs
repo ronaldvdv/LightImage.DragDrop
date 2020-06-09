@@ -86,7 +86,23 @@ namespace LightImage.DragDrop
             public IEnumerable SourceItems => _info.DragInfo?.SourceItems;
 
             /// <inheritdoc/>
-            public object TargetItem => _info.TargetItem;
+            public object TargetItem
+            {
+                get
+                {
+                    if (_info.TargetItem != null)
+                    {
+                        return _info.TargetItem;
+                    }
+
+                    if (_info.TargetGroup != null)
+                    {
+                        return _info.TargetGroup.Name;
+                    }
+
+                    return null;
+                }
+            }
 
             /// <inheritdoc/>
             public object VisualTarget => _info.VisualTarget;
