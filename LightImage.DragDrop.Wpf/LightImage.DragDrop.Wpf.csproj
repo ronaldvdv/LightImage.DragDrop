@@ -14,7 +14,7 @@
     <PackageProjectUrl>https://github.com/ronaldvdv/LightImage.DragDrop</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ronaldvdv/LightImage.DragDrop</RepositoryUrl>
     <PackageTags>dragdrop,drag,drop,mvvm,viewmodels,gong,gongsolutions,wpf</PackageTags>
-    <Version>0.2-alpha</Version>
+    <Version>0.3-alpha</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
