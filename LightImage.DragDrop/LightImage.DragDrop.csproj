@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>0.2.0-alpha</Version>
+    <Version>0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Ronald van der Velden, Jeroen van der Velden</Authors>
     <Company>Light Image</Company>
@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/ronaldvdv/LightImage.DragDrop</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ronaldvdv/LightImage.DragDrop</RepositoryUrl>
     <PackageTags>dragdrop,drag,drop,mvvm,viewmodels,gong,gongsolutions,wpf</PackageTags>
-    <Copyright>(c) 2020 Light Image</Copyright>
+    <Copyright>(c) 2021 Light Image</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -20,11 +20,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LightImage.Util" Version="1.1.0-alpha" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="System.Reactive" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

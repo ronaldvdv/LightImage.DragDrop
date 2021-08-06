@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using LightImage.Util.Geometry;
 
 namespace LightImage.DragDrop
 {
@@ -12,7 +11,7 @@ namespace LightImage.DragDrop
         public object Data { get; set; }
 
         /// <inheritdoc/>
-        public PointD DropPosition { get; set; }
+        public DropPoint DropPosition { get; set; }
 
         /// <inheritdoc/>
         public DragDropEffect Effect { get; set; } = DragDropEffect.Move;
@@ -34,5 +33,8 @@ namespace LightImage.DragDrop
 
         /// <inheritdoc/>
         public object VisualTarget { get; set; }
+
+        /// <inheritdoc/>
+        public RelativePosition RelativePosition { get; set; }
     }
 }

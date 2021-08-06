@@ -1,6 +1,4 @@
-﻿using LightImage.Util.Geometry;
-
-namespace LightImage.DragDrop
+﻿namespace LightImage.DragDrop
 {
     /// <summary>
     /// Contract for drop target controls that support transforming the drop coordinates to a local coordinate system.
@@ -12,6 +10,6 @@ namespace LightImage.DragDrop
         /// </summary>
         /// <param name="dropPosition">The original drop coordinates.</param>
         /// <returns>The transformed coordinates.</returns>
-        PointD TransformDropPosition(PointD dropPosition);
+        DropPoint TransformDropPosition(DropPoint dropPosition);
     }
 }

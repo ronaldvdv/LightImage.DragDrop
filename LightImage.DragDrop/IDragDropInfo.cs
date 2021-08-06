@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using LightImage.Util.Geometry;
 
 namespace LightImage.DragDrop
 {
@@ -16,7 +15,7 @@ namespace LightImage.DragDrop
         /// <summary>
         /// Gets the mouse coordinates relative to the drop target control.
         /// </summary>
-        PointD DropPosition { get; }
+        DropPoint DropPosition { get; }
 
         /// <summary>
         /// Gets or sets the effect for visualizing the type of action.
@@ -37,6 +36,11 @@ namespace LightImage.DragDrop
         /// Gets a value indicating whether the Control key is being pressed during the action.
         /// </summary>
         bool IsCtrlPressed { get; }
+
+        /// <summary>
+        /// Gets the relative mouse position compared to the <see cref="TargetItem"/>.
+        /// </summary>
+        RelativePosition RelativePosition { get; }
 
         /// <summary>
         /// Gets the collection of items in the source control where the dragging started.

@@ -4,7 +4,6 @@ using System.Reactive.Disposables;
 using System.Windows;
 using System.Windows.Controls;
 using GongSolutions.Wpf.DragDrop;
-using LightImage.Util.Geometry;
 
 using GongDD = GongSolutions.Wpf.DragDrop;
 
@@ -57,7 +56,7 @@ namespace LightImage.DragDrop
             {
                 _info = info;
                 CheckFiles();
-                DropPosition = new PointD(info.DropPosition.X, info.DropPosition.Y);
+                DropPosition = new DropPoint(info.DropPosition.X, info.DropPosition.Y);
                 Index = info.InsertIndex;
                 if (VisualTarget is IDropPositionTransformer transformer)
                 {
@@ -67,7 +66,7 @@ namespace LightImage.DragDrop
 
             public object Data => _info.Data;
 
-            public PointD DropPosition { get; }
+            public DropPoint DropPosition { get; }
 
             public DragDropEffect Effect
             {
@@ -106,6 +105,20 @@ namespace LightImage.DragDrop
 
             /// <inheritdoc/>
             public object VisualTarget => _info.VisualTarget;
+
+            public RelativePosition RelativePosition => ConvertRelativePosition(_info.InsertPosition);
+
+            private RelativePosition ConvertRelativePosition(RelativeInsertPosition insertPosition)
+            {
+                return insertPosition switch
+                {
+                    RelativeInsertPosition.None => RelativePosition.None,
+                    RelativeInsertPosition.BeforeTargetItem => RelativePosition.Before,
+                    RelativeInsertPosition.AfterTargetItem => RelativePosition.After,
+                    RelativeInsertPosition.TargetItemCenter => RelativePosition.On,
+                    _ => throw new NotImplementedException()
+                };
+            }
 
             private void CheckFiles()
             {
