@@ -3,12 +3,12 @@
 namespace LightImage.DragDrop
 {
     /// <summary>
-    /// Extension methods for converting between <see cref="Geometry"/> and <see cref="System.Windows"/> geometry.
+    /// Extension methods for converting between Windows and dragdrop coordinates.
     /// </summary>
     public static class ConversionExtensions
     {
         /// <summary>
-        /// Convert a <see cref="PointD"/> to a <see cref="Point"/>.
+        /// Convert a <see cref="DropPoint"/> to a <see cref="Point"/>.
         /// </summary>
         /// <param name="pt">The point to be converted.</param>
         /// <returns>The converted point.</returns>
@@ -18,7 +18,7 @@ namespace LightImage.DragDrop
         }
 
         /// <summary>
-        /// Convert a <see cref="Point"/> to a <see cref="PointD"/>.
+        /// Convert a <see cref="Point"/> to a <see cref="DropPoint"/>.
         /// </summary>
         /// <param name="pt">The point to be converted.</param>
         /// <returns>The converted point.</returns>
